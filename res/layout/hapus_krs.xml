@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRL"
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/krs">
+    
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:gravity="top"
+    android:orientation="vertical">
+		<Button
+    		android:id="@+id/btn_hapus_krs"
+    		android:layout_marginTop="100dp"
+    		style="@style/CommonButton"
+    		android:text="Input - Edit KRS" /> 
+</LinearLayout>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:gravity="top"
+    android:layout_marginTop="200dp"
+    android:stretchColumns="*">
+    
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+        <TextView
+    		android:text="Mata Kuliah"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_span="3" />
+        <TextView
+            android:id="@+id/tampil_hapus_mk"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_span="7"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+            
+  	</TableRow>
+    
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+
+        <TextView
+    		android:text="SKS"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_span="3" />
+            
+        <TextView
+            android:id="@+id/tampil_hapus_sks"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_span="7"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+        
+  	</TableRow>
+    
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+            
+        <TextView
+    		android:text="SMT"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:layout_span="3" />
+            
+        <TextView
+            android:id="@+id/tampil_hapus_smt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_span="7"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingBottom="2dip" />
+        <TextView
+            android:id="@+id/tampil_hapus_krs_detail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#333"
+            android:textSize="1sp"
+            android:layout_span="1" />
+        
+  	</TableRow>
+</TableLayout> 
+    	    
+</RelativeLayout>

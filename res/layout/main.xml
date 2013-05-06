@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRL"
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/login">
+   
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+style="@style/HeaderStyle" >
+
+</LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:gravity="bottom"
+    android:layout_marginBottom="30dp"
+    android:orientation="vertical" >
+    
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:gravity="bottom"
+    android:stretchColumns="*">
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+
+		<TextView
+    		android:id="@+id/txt_alert"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+			android:gravity="center"
+    		android:padding="10dp"
+    		android:visibility="invisible"
+    		android:layout_gravity="center"
+    		android:background="#CA3333"
+    		android:text=""
+    		android:layout_span="4"
+    		android:textColor="#ffffff" >
+		</TextView>
+    </TableRow>
+    
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+        <EditText
+        	android:hint="Username"
+    		android:id="@+id/txt_username"
+    		android:layout_span="3"
+    		style="@style/EditTextStyle" >
+		</EditText>
+		<Button
+    		android:id="@+id/btn_login"
+    		android:layout_width="1sp"
+    		style="@style/CommonButton"
+    		android:text="Login" />
+    </TableRow>
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+		<EditText
+        	android:hint="Password"
+    		android:id="@+id/txt_pass"
+    		android:inputType="textPassword"
+    		android:layout_span="3"
+    		style="@style/EditTextStyle" >
+		</EditText>
+		<Button
+    		android:id="@+id/btn_hapus"
+    		android:layout_width="1sp"
+    		style="@style/CommonButton"
+    		android:text="Reset" />
+    </TableRow>
+</TableLayout>
+</LinearLayout>
+    
+    
+</RelativeLayout>

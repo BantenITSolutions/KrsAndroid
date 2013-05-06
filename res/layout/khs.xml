@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRL"
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/khs">
+    		
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:gravity="bottom"
+    android:background="@drawable/khs"
+    android:orientation="vertical">
+    
+		<include layout="@layout/list_layout"/>	
+
+</LinearLayout>
+    	    
+</RelativeLayout>

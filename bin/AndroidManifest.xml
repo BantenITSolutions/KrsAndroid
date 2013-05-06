@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dlmbg.pckg.portal.sistem.akademik"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".PortalSistemAkademikActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<activity android:name="DashboardActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="TranskripActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="KhsActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="DetailKhsActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="KrsActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="InputKrsActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="DetailMataKuliahActivity" android:label="DashBoard Sistem Akademik"></activity>
+		<activity android:name="HapusKrsActivity" android:label="DashBoard Sistem Akademik"></activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>

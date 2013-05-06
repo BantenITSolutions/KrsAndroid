@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    	android:background="#525152"
+    android:orientation="horizontal"> 
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    	android:layout_margin="10dp"
+        android:orientation="vertical">
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:gravity="bottom"
+    android:stretchColumns="*">
+    
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+        <TextView
+    		android:text="Mata Kuliah"
+            android:textSize="12sp"
+            android:layout_span="7" />
+
+        <TextView
+    		android:text="SKS"
+            android:textSize="12sp"
+            android:layout_span="1" />
+            
+        <TextView
+    		android:text="SMT"
+            android:textSize="12sp"
+            android:layout_span="1" />
+  	</TableRow>
+    
+   <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/nama_mk_pilih"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_span="7"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sks_pilih"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_span="1"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+            
+        <TextView
+            android:id="@+id/semester_pilih"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_span="1"
+            android:textStyle="bold"
+            android:paddingBottom="2dip" />
+            
+        <TextView
+            android:id="@+id/kode_mk_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="1sp"
+            android:layout_span="1" />
+        
+  	</TableRow>
+</TableLayout> 
+    </LinearLayout>
+
+</LinearLayout>
