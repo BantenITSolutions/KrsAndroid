@@ -43,6 +43,8 @@ public class KrsActivity extends ListActivity {
 	String isi = lo_Koneksi.isi_koneksi();
 	String link_url = "";
 	JSONArray str_json = null;
+	Integer jum_sks_tersimpan = 0;
+	TextView ket_smt_ta,ket_ipk_sebelum,ket_max_sks;
 
 	ArrayList<HashMap<String, String>> dataMap = new ArrayList<HashMap<String, String>>();
 	public void onBackPressed()
@@ -68,6 +70,8 @@ public class KrsActivity extends ListActivity {
 	        final String awal_krs = user.get(SessionManager.KEY_AWAL_KRS);
 	        final String akhir_krs = user.get(SessionManager.KEY_AKHIR_KRS);
 	        final String ket_ta = user.get(SessionManager.KEY_TA);
+	        final String max_sks = user.get(SessionManager.KEY_MAX_SKS);
+	        final String ipk = user.get(SessionManager.KEY_IPK);
 	        
 	    	link_url = isi + "/krs_saved.php?nim="+nim+"&smt="+smt;
 	        new getListInfo().execute();
@@ -77,8 +81,13 @@ public class KrsActivity extends ListActivity {
 	        Button btn_krs = (Button) findViewById(R.id.btn_in_krs);
 	        btn_krs.setText("Input / Edit KRS");
 
-	        TextView ket_smt_ta = (TextView) findViewById(R.id.ket_smt_ta);
+	        ket_smt_ta = (TextView) findViewById(R.id.ket_smt_ta);
+	        ket_ipk_sebelum = (TextView) findViewById(R.id.ket_ipk_sebelum);
+	        ket_max_sks = (TextView) findViewById(R.id.ket_max_sks);
 	        ket_smt_ta.setText(ket_ta);
+	        ket_ipk_sebelum.setText("IPK Semester Lalu : "+ipk);
+	        ket_max_sks.setText("Beban SKS : "+max_sks);
+	        
 	
 	        btn_krs.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -97,9 +106,17 @@ public class KrsActivity extends ListActivity {
 						
 				        if (tgl_sekarang.after(startDate) && tgl_sekarang.before(endDate))  
 				        {
-						    Toast.makeText(getApplicationContext(), "Silahkan memilih mata kuliah", Toast.LENGTH_SHORT).show();
-							Intent i = new Intent(getApplicationContext(), InputKrsActivity.class);
-							startActivity(i);
+				        	if(jum_sks_tersimpan>=Integer.parseInt(max_sks))
+				        	{
+							    Toast.makeText(getApplicationContext(), "Beban maksimal SKS tidak mencukupi", Toast.LENGTH_SHORT).show();
+				        	}
+				        	else
+				        	{
+							    Toast.makeText(getApplicationContext(), "Silahkan memilih mata kuliah", Toast.LENGTH_SHORT).show();
+								Intent i = new Intent(getApplicationContext(), InputKrsActivity.class);
+	        					i.putExtra("jum_sks", jum_sks_tersimpan.toString());
+								startActivity(i);
+				        	}
 				        }
 				        else if (tgl_sekarang.after(endDate))  
 				        {
@@ -159,6 +176,10 @@ public class KrsActivity extends ListActivity {
 					map.put("kode_krs_detail", kode_krs_detail);
 
 					dataMap.add(map);
+					if(i<str_json.length()-1)
+					{
+						jum_sks_tersimpan = jum_sks_tersimpan+Integer.parseInt(jum_sks);
+					}
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -176,6 +197,7 @@ public class KrsActivity extends ListActivity {
 							R.layout.list_style_krs_tersimpan, new String[] {"nama_mk", "semester","sks","kode_krs_detail"}, 
 							new int[] {R.id.nama_mk, R.id.semester, R.id.sks, R.id.krs_detail});
                 	setListAdapter(adapter);
+        	        
                 	ListView lv = getListView();
         			lv.setVerticalFadingEdgeEnabled(false);
         			lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -194,6 +216,7 @@ public class KrsActivity extends ListActivity {
         					in.putExtra("sks_mk", sks_mk);
         					in.putExtra("smt_mk", smt_mk);
         					in.putExtra("krs_id", krs_id);
+        					in.putExtra("jum_sks", jum_sks_tersimpan.toString());
         					Toast.makeText(getApplicationContext(), nama_mk, Toast.LENGTH_SHORT).show();
         					startActivity(in);
         					  

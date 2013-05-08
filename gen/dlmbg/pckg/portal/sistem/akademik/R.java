@@ -24,30 +24,32 @@ public final class R {
         public static final int userinfo=0x7f02000a;
     }
     public static final class id {
-        public static final int btn_hapus=0x7f070025;
+        public static final int btn_hapus=0x7f070027;
         public static final int btn_hapus_krs=0x7f07000e;
         public static final int btn_in_krs=0x7f070008;
         public static final int btn_khs=0x7f070004;
         public static final int btn_krs=0x7f070005;
-        public static final int btn_login=0x7f070023;
+        public static final int btn_login=0x7f070025;
         public static final int btn_logout=0x7f070007;
         public static final int btn_transkrip=0x7f070006;
-        public static final int grade=0x7f070020;
-        public static final int judul_list=0x7f070018;
-        public static final int jum_sks=0x7f07001f;
-        public static final int keluar=0x7f070027;
-        public static final int ket_smt_ta=0x7f070013;
-        public static final int kode_mk_list=0x7f070017;
-        public static final int krs_detail=0x7f07001c;
-        public static final int nama_mk=0x7f070019;
-        public static final int nama_mk_pilih=0x7f070014;
+        public static final int grade=0x7f070022;
+        public static final int judul_list=0x7f07001a;
+        public static final int jum_sks=0x7f070021;
+        public static final int keluar=0x7f070029;
+        public static final int ket_ipk_sebelum=0x7f070013;
+        public static final int ket_max_sks=0x7f070014;
+        public static final int ket_smt_ta=0x7f070015;
+        public static final int kode_mk_list=0x7f070019;
+        public static final int krs_detail=0x7f07001e;
+        public static final int nama_mk=0x7f07001b;
+        public static final int nama_mk_pilih=0x7f070016;
         public static final int rootRL=0x7f070000;
-        public static final int semester=0x7f07001b;
-        public static final int semester_ditempuh=0x7f07001d;
-        public static final int semester_pilih=0x7f070016;
-        public static final int sks=0x7f07001a;
-        public static final int sks_pilih=0x7f070015;
-        public static final int smt=0x7f07001e;
+        public static final int semester=0x7f07001d;
+        public static final int semester_ditempuh=0x7f07001f;
+        public static final int semester_pilih=0x7f070018;
+        public static final int sks=0x7f07001c;
+        public static final int sks_pilih=0x7f070017;
+        public static final int smt=0x7f070020;
         public static final int tableLayout1=0x7f070001;
         public static final int tableRow2=0x7f070002;
         public static final int tampil_hapus_krs_detail=0x7f070012;
@@ -59,11 +61,11 @@ public final class R {
         public static final int tampil_mk=0x7f07000b;
         public static final int tampil_sks=0x7f07000c;
         public static final int tampil_smt=0x7f07000d;
-        public static final int txt_alert=0x7f070021;
+        public static final int txt_alert=0x7f070023;
         public static final int txt_keterangan=0x7f070003;
-        public static final int txt_pass=0x7f070024;
-        public static final int txt_username=0x7f070022;
-        public static final int url=0x7f070026;
+        public static final int txt_pass=0x7f070026;
+        public static final int txt_username=0x7f070024;
+        public static final int url=0x7f070028;
     }
     public static final class layout {
         public static final int dashboard=0x7f030000;

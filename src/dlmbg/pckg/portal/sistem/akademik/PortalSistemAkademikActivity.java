@@ -136,7 +136,10 @@ public class PortalSistemAkademikActivity extends Activity {
 					String krs_mulai = json.getString("krs_mulai");
 					String krs_selesai = json.getString("krs_selesai");
 					String smt_ta = json.getString("ket_semester")+" / "+json.getString("ket_ta");
-					session.createLoginSession(username_log, nama, jurusan, angkatan, pembimbing, prodi_kode, semester, krs_id, krs_mulai, krs_selesai, smt_ta);
+					String ipk = json.getString("ipk");
+					String sks = json.getString("sks");
+					session.createLoginSession(username_log, nama, jurusan, angkatan, pembimbing, prodi_kode, semester, krs_id, krs_mulai, 
+							krs_selesai, smt_ta, ipk,sks);
 					Intent i = new Intent(getApplicationContext(),DashboardActivity.class);
 					startActivity(i);
 					finish();

@@ -146,14 +146,30 @@ public class InputKrsActivity extends ListActivity {
         			        session.checkLogin();
         			    	HashMap<String, String> get_id = session.getUserDetails();
         			        String krs_id = get_id.get(SessionManager.KEY_KRS_ID);
-        			        Intent in = new Intent(getApplicationContext(), DetailMataKuliahActivity.class);
-        					in.putExtra("nama_mk", nama_mk);
-        					in.putExtra("kode_mk", kode_mk);
-        					in.putExtra("sks_mk", sks_mk);
-        					in.putExtra("smt_mk", smt_mk);
-        					in.putExtra("krs_id", krs_id);
-        					Toast.makeText(getApplicationContext(), nama_mk, Toast.LENGTH_SHORT).show();
-        					startActivity(in);
+
+        			        Bundle b = getIntent().getExtras();
+        					String jum_sks = b.getString("jum_sks");
+        					int jum_sementara = Integer.parseInt(jum_sks)+Integer.parseInt(sks_mk);
+        			    	HashMap<String, String> user = session.getUserDetails();
+        			        final String max_sks = user.get(SessionManager.KEY_MAX_SKS);
+        			        
+        					if(jum_sementara>Integer.parseInt(max_sks))
+        					{
+            					Toast.makeText(getApplicationContext(), "Beban maksimal SKS tidak mencukupi", Toast.LENGTH_SHORT).show();
+        					}
+        					else
+        					{
+
+            			        Intent in = new Intent(getApplicationContext(), DetailMataKuliahActivity.class);
+            					in.putExtra("nama_mk", nama_mk);
+            					in.putExtra("kode_mk", kode_mk);
+            					in.putExtra("sks_mk", sks_mk);
+            					in.putExtra("smt_mk", smt_mk);
+            					in.putExtra("krs_id", krs_id);
+            					Toast.makeText(getApplicationContext(), nama_mk, Toast.LENGTH_SHORT).show();
+            					startActivity(in);
+        						
+        					}
         					  
         				}
         			});

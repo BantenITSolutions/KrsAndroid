@@ -59,6 +59,12 @@ public class SessionManager {
     // Name (make variable public to access from outside)
     public static final String KEY_TA = "smt_ta";
  
+    // Name (make variable public to access from outside)
+    public static final String KEY_MAX_SKS = "sks";
+ 
+    // Name (make variable public to access from outside)
+    public static final String KEY_IPK = "ipk";
+ 
     // Constructor
     public SessionManager(Context context){
         this._context = context;
@@ -70,7 +76,7 @@ public class SessionManager {
      * Create login session
      * */
     public void createLoginSession(String username, String nama, String jurusan, String angkatan, String pembimbing, String prodi, String semester, String krs_id, 
-    		String awal_krs, String akhir_krs, String smt_ta){
+    		String awal_krs, String akhir_krs, String smt_ta, String ipk, String sks){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
  
@@ -106,6 +112,12 @@ public class SessionManager {
  
         // Storing email in pref
         editor.putString(KEY_TA, smt_ta);
+ 
+        // Storing email in pref
+        editor.putString(KEY_IPK, ipk);
+ 
+        // Storing email in pref
+        editor.putString(KEY_MAX_SKS, sks);
  
         // commit changes
         editor.commit();
@@ -170,6 +182,12 @@ public class SessionManager {
  
         // user email id
         user.put(KEY_TA, pref.getString(KEY_TA, null));
+ 
+        // user email id
+        user.put(KEY_IPK, pref.getString(KEY_IPK, null));
+ 
+        // user email id
+        user.put(KEY_MAX_SKS, pref.getString(KEY_MAX_SKS, null));
  
         // return user
         return user;
